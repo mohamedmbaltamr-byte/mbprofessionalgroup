@@ -46,7 +46,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand page-scroll" href="#page-top">MB Professional Group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> </div>
+      <a class="navbar-brand page-scroll" href="#page-top">MB Professional &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> </div>
     
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
@@ -465,7 +465,57 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+<script>
 
+// اختيار المينيو
+const menu = document.getElementById('menu'); // عدل على حسب ID
+const menuButton = document.getElementById('menu-button'); // زر فتح المينيو
+const largeImages = document.querySelectorAll('img[src*="large"]');
+
+// دالة لإخفاء المينيو
+function hideMenu() {
+  menu.style.display = 'none';
+}
+
+// حدث لمس الصفحة
+document.addEventListener('click', function(e) {
+  const target = e.target;
+
+  // إذا الهدف ليس زر المينيو ولا المينيو نفسه ولا صورة كبيرة
+  if (
+    target !== menu &&
+    !menu.contains(target) &&
+    !Array.from(largeImages).includes(target) &&
+    target !== menuButton
+  ) {
+    hideMenu();
+  }
+});
+// اختيار المينيو
+const menu = document.getElementById('menu'); // عدل على حسب ID
+const menuButton = document.getElementById('menu-button'); // زر فتح المينيو
+const largeImages = document.querySelectorAll('img[src*="large"]');
+
+// دالة لإخفاء المينيو
+function hideMenu() {
+  menu.style.display = 'none';
+}
+
+// حدث لمس الصفحة
+document.addEventListener('click', function(e) {
+  const target = e.target;
+
+  // إذا الهدف ليس زر المينيو ولا المينيو نفسه ولا صورة كبيرة
+  if (
+    target !== menu &&
+    !menu.contains(target) &&
+    !Array.from(largeImages).includes(target) &&
+    target !== menuButton
+  ) {
+    hideMenu();
+  }
+});
+</script>
 <script>
 // سلاسة الانتقال لزر Learn More
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -479,23 +529,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       });
     }
   });
-});
-</script>
-<script>
-
-// مثال: إخفاء Navbar عند الضغط خارجها فقط
-document.addEventListener('click', function(e) {
-  const menu = document.querySelector('.navbar-collapse'); // حاوية المينو
-  const toggle = document.querySelector('.navbar-toggle');  // زر الهامبورغر
-  
-  // إذا كانت المينو مفتوحة
-  if(menu.classList.contains('in')) {
-    // إذا النقر خارج المينو والزر فقط
-    if(!menu.contains(e.target) && !toggle.contains(e.target)) {
-      // إخفاء المينو
-      toggle.click(); // يعمل نفس حدث الهامبورغر لإغلاق
-    }
-  }
 });
 </script>
 
