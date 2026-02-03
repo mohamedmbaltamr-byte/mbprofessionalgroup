@@ -1637,7 +1637,7 @@ html, body {
   #menu,
   .navbar,
   .navbar-default {
-    background: rgba(255, 255, 255, 0.12) !important;
+    background: rgba(255, 255, 255, 0.20) !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: none !important;
@@ -2449,3 +2449,6 @@ img {
     top: auto !important;
     left: auto !important;
 }
+
+
+
