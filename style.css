@@ -2402,12 +2402,13 @@ img {
         justify-content: space-between;  /* الاسم لليسار و الزر لليمين */
         align-items: center;
         width: 100%;
-        padding: 0 2%; /* مسافة من الحواف 5% من عرض الشاشة */
+        padding: 0 0.5%; /* مسافة صغيرة من الحواف */
         box-sizing: border-box;
+        text-align: left; /* يلغي أي تمركز سابق */
     }
 
     .navbar-brand {
-        margin: 0;
+        margin: 0;       /* يلغي أي تمركز سابق */
         padding: 0;
         white-space: nowrap;
     }
