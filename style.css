@@ -2402,7 +2402,7 @@ img {
         justify-content: space-between;  /* الاسم لليسار و الزر لليمين */
         align-items: center;
         width: 100%;
-        padding: 0 0.5%; /* مسافة صغيرة من الحواف */
+        padding: 0 3%; /* مسافة صغيرة من الحواف */
         box-sizing: border-box;
         text-align: left; /* يلغي أي تمركز سابق */
     }
@@ -2417,4 +2417,35 @@ img {
         margin: 0;
         padding: 0;
     }
+}
+
+
+/* ==== توسيط كامل لقائمة الصور الكبيرة في Lightbox ==== */
+.nivo-lightbox-content {
+    position: fixed !important;       /* اجعل النافذة ثابتة على الشاشة */
+    top: 50% !important;              /* منتصف عمودي */
+    left: 50% !important;             /* منتصف أفقي */
+    transform: translate(-50%, -50%) !important; /* لضبط المركز تماماً */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: 95vw !important;       /* عرض نسبي للشاشة */
+    max-height: 90vh !important;      /* ارتفاع نسبي للشاشة */
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* الصور داخل Lightbox */
+.nivo-lightbox-content img {
+    max-width: 90vw !important;       /* الصور لا تتجاوز عرض الشاشة */
+    max-height: 80vh !important;      /* الصور لا تتجاوز ارتفاع الشاشة */
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+    margin: auto !important;          /* توسيط كامل */
+    top: auto !important;
+    left: auto !important;
 }
