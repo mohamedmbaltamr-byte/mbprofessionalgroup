@@ -2395,3 +2395,25 @@ img {
 .nivo-lightbox-content {
     text-align: center; /* توسيط المحتوى داخل النافذة */
 }
+/* ===== FOR MOBILE ONLY ===== */
+@media (max-width: 767px) {
+    .navbar-header {
+        display: flex;
+        justify-content: space-between;  /* الاسم لليسار و الزر لليمين */
+        align-items: center;
+        width: 100%;
+        padding: 0 2%; /* مسافة من الحواف 5% من عرض الشاشة */
+        box-sizing: border-box;
+    }
+
+    .navbar-brand {
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+    }
+
+    .navbar-toggle {
+        margin: 0;
+        padding: 0;
+    }
+}
