@@ -2402,7 +2402,7 @@ img {
         justify-content: space-between;  /* الاسم لليسار و الزر لليمين */
         align-items: center;
         width: 100%;
-        padding: 0 3%; /* مسافة صغيرة من الحواف */
+        padding: 0 2%; /* مسافة صغيرة من الحواف */
         box-sizing: border-box;
         text-align: left; /* يلغي أي تمركز سابق */
     }
