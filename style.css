@@ -535,7 +535,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 }
 #menu a.navbar-brand {
 	font-size: 22px;
-	color: #eee;
+	color: #eeeeee00;
 	font-weight: 400;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -592,7 +592,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	transition: all 0.5s;
 }
 .btn-custom:hover, .btn-custom:focus, .btn-custom.focus, .btn-custom:active, .btn-custom.active {
-	color: rgba(255,255,255,0.8);
+	color: rgba(255,255,255,0.0);
 	background-color: #94ae44;
 }
 /* Header Section */
@@ -898,10 +898,20 @@ color: #777;
 #contact .contact-item p {
 	font-size: 16px;
 }
+
+
+
+
+
+
 /* Footer Section*/
 #footer {
-	background: #333;
-	padding: 50px 0 20px 0;
+	background:linear-gradient(180deg, #060606, #320000);
+	padding: 50px 0 10px 0;
+
+
+
+  
 }
 #footer .social {
 	margin-bottom: 50px;
@@ -913,7 +923,7 @@ color: #777;
 #footer .social i.fa-brands {
 	font-size: 36px;
 	padding: 4px;
-	color: rgba(255, 255, 255, 0.6);
+	color: rgba(234, 255, 0, 0.765);
 	transition: all 0.3s;
 }
 #footer .social i.fa:hover {
@@ -945,7 +955,7 @@ body {
 #portfolio,
 #team,
 #contact {
-  background: linear-gradient(180deg, #000000, #2a2a2a);
+  background: linear-gradient(180deg, #060606, #320000);
   color: #eee;
 }
 
@@ -1022,7 +1032,7 @@ hr {
 #services {
     padding: 120px 0;
     /* إزالة أي صورة */
-    background: linear-gradient(180deg, #000000, #2a2a2a); /* نفس الخلفية المتناسقة مع باقي الأقسام */
+    background: linear-gradient(180deg, #060606, #320000); /* نفس الخلفية المتناسقة مع باقي الأقسام */
     color: #eee;
 }
 
@@ -1034,7 +1044,7 @@ hr {
 #about {
     padding: 120px 0;
     /* إزالة أي صورة */
-    background: linear-gradient(180deg, #000000, #2a2a2a); /* نفس الخلفية المتناسقة مع باقي الأقسام */
+    background: linear-gradient(180deg, #060606, #320000); /* نفس الخلفية المتناسقة مع باقي الأقسام */
     color: #eee;
 }
 
@@ -1053,7 +1063,7 @@ hr {
 
 
 #header .intro {
-    background: linear-gradient(180deg, #000000, #2a2a2a); /* خلفية داكنة متدرجة */
+    background: linear-gradient(180deg, #060606, #320000); /* خلفية داكنة متدرجة */
     color: #eee;
     padding: 120px 0; /* مسافة علوية وسفلية */
     text-align: center;
@@ -1069,7 +1079,7 @@ hr {
     align-items: center;        /* محاذاة عمودية في الوسط */
     height: 100vh;              /* ارتفاع الهيدر كامل الشاشة */
     text-align: center;         /* النص في الوسط */
-    background: linear-gradient(180deg, #000000, #2a2a2a); /* الخلفية الداكنة */
+    background: linear-gradient(180deg, #060606, #320000); /* الخلفية الداكنة */
 }
 
 xt h1 {
@@ -2448,6 +2458,153 @@ img {
     margin: auto !important;          /* توسيط كامل */
     top: auto !important;
     left: auto !important;
+}
+
+
+
+/* ===== الشعار العام ===== */
+.navbar-logo{
+  width: auto;
+  display: block;
+}
+
+/* ===== اللابتوب (حجم نسبي بدل 70px) ===== */
+@media (min-width: 769px){
+
+  .navbar-logo{
+    height: clamp(70px, 3.6vw, 70px);
+    /* 
+    70px = أقصى حجم
+    3.6vw = الحجم النسبي حسب الشاشة
+    50px = أصغر حجم مسموح
+    */
+  }
+
+  .navbar-brand{
+    padding-top: 0px !important;
+  }
+}
+
+
+
+
+
+
+/* =====================================
+   MOBILE LOGO REAL FIX (هنا الحل الجذري)
+   ===================================== */
+
+@media (max-width: 768px){
+
+  /* تصغير ارتفاع شريط المينيو نفسه */
+  .navbar,
+  .navbar-default,
+  .navbar-fixed-top{
+      min-height: 55px !important;
+      height: 55px !important;
+      padding: 0 12px !important;
+  }
+
+  /* إزالة الفراغات التي تكبر الشعار */
+  .navbar-header{
+      height: 55px !important;
+      display: flex !important;
+      align-items: center !important;
+  }
+
+  .navbar-brand{
+      padding: 0 !important;
+      height: 55px !important;
+      display: flex !important;
+      align-items: center !important;
+  }
+
+  /* حجم الشعار الحقيقي */
+  .navbar-logo{
+      height: 60px !important;   /* ← غير الرقم كما تريد */
+      max-height: 60px !important;
+      width: auto !important;
+      object-fit: contain;
+  }
+
+  /* تصغير زر الهمبرجر ليتناسب */
+  .navbar-toggle{
+      margin-top: 10px !important;
+      margin-bottom: 10px !important;
+      padding: 7px 8px !important;
+  }
+
+
+
+
+
+
+
+
+}
+/* ===== وضع الشعار أقصى اليسار في الهاتف ===== */
+@media (max-width: 768px){
+
+  .navbar-header{
+      width: 100% !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+  }
+
+  /* الشعار إلى اليسار مع مسافة 5% */
+  .navbar-brand{
+      order: -1;              /* يجعله قبل زر الهامبرغر */
+      margin-left: 3% !important;
+      margin-right: 0 !important;
+  }
+
+  /* زر الهامبرغر إلى اليمين */
+  .navbar-toggle{
+      order: 2;
+      margin-right: 5% !important;
+      margin-left: auto !important;
+  }
+
+}
+
+/* ===== للهاتف فقط ===== */
+@media (max-width: 768px){
+  /* الشريط العلوي */
+  .navbar {
+    height: 90px !important;   /* ارتفاع الشريط العلوي */
+    min-height: 90px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* الشعار وزر الهامبرغر */
+  .navbar-brand {
+    padding-top: 15px !important;    /* المسافة من أعلى الشريط */
+    padding-bottom: 0 !important;
+  }
+
+ 
+
+  .navbar-toggler {
+    margin-top: 40px !important;    /* رفع زر المينيو مع الشعار */
+  }
+}
+
+
+
+/* ===== خلفية صفحة About على الهاتف فقط ===== */
+@media (max-width: 768px) {
+  #about {
+
+
+    background-repeat: no-repeat;
+    height: 110vh;                /* يملأ شاشة الهاتف بالكامل */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;      /* المحتوى في الوسط عمودياً */
+    padding: 20px;
+  }
 }
 
 
