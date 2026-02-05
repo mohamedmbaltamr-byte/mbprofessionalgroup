@@ -906,7 +906,7 @@ color: #777;
 
 /* Footer Section*/
 #footer {
-	background:linear-gradient(180deg, #060606, #320000);
+	background: #210000;
 	padding: 50px 0 10px 0;
 
 
@@ -923,7 +923,7 @@ color: #777;
 #footer .social i.fa-brands {
 	font-size: 36px;
 	padding: 4px;
-	color: rgba(234, 255, 0, 0.765);
+	color: rgba(255, 255, 255, 0.616);
 	transition: all 0.3s;
 }
 #footer .social i.fa:hover {
@@ -2634,7 +2634,7 @@ img {
         top: 100%;           
         left: 0;
         right: 0;
-        background: rgba(0,0,0,0.9);  /* لون داكن مع شفافية */
+        background: rgba(0, 0, 0, 0.818);  /* لون داكن مع شفافية */
         border-radius: 15px;  
         padding: 15px 0;
         box-shadow: 0 4px 12px rgba(0,0,0,0.3);
@@ -2663,10 +2663,84 @@ img {
         font-weight: 600;
         border-radius: 8px;
         transition:
-        background: 0.3s ease;
+        background:  ease;
     }
 
     .collapse.navbar-collapse ul.nav li a:hover {
         background: rgba(255, 255, 255, 0.2);
     }
+}
+
+
+
+
+
+
+
+
+
+/* ===== لون شريط اللابتوب فقط ===== */
+@media (min-width: 769px){
+
+  /* الشريط نفسه */
+  #menu.navbar,
+  #menu.navbar-default,
+  #menu.navbar-default.navbar-fixed-top,
+  #menu.navbar.top-nav-collapse,
+  #menu.navbar.affix{
+      background: rgba(0, 0, 0, 0.01) !important;
+      border: none !important;
+      box-shadow: none !important;
+  }
+
+}
+
+/* خلفية قائمة المينيو عند الفتح - الهاتف فقط */
+@media (max-width:768px){
+
+  #bs-example-navbar-collapse-1{
+      background: rgba(255, 255, 255, 0.1) !important; /* اللون والشفافية */
+      backdrop-filter: blur(10px);              /* تأثير زجاجي اختياري */
+  }
+
+}
+
+
+
+
+
+
+
+@media (max-width:768px){
+
+  /* صندوق القائمة */
+  #bs-example-navbar-collapse-1{
+      background: rgba(130, 130, 130, 0.15) !important; /* شفافية */
+      backdrop-filter: blur(14px) saturate(160%);
+      -webkit-backdrop-filter: blur(14px) saturate(160%);
+      
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+
+      margin: 10px;
+      padding: 10px 0;
+  }
+
+  /* الروابط */
+  #bs-example-navbar-collapse-1 ul li a{
+      color: #ffffff !important;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all .25s ease;
+  }
+
+  /* الهوفر */
+  #bs-example-navbar-collapse-1 ul li a:hover{
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(6px);
+      border-radius: 10px;
+      padding-left: 28px;
+  }
+
 }
