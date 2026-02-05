@@ -52,7 +52,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
   <button type="button"
           class="navbar-toggle collapsed"
-          data-toggle="collapse"
+  
           data-target="#bs-example-navbar-collapse-1">
     <span class="sr-only">Toggle navigation</span>
     <span class="icon-bar"></span>
@@ -395,6 +395,8 @@ window.addEventListener('scroll',()=>{
   });
 });
 </script>
+
+
 <script>
 
 // اختر جميع روابط المينيو التي تبدأ بـ #
@@ -409,6 +411,10 @@ document.querySelectorAll('#menu a[href^="#"]').forEach(anchor => {
   });
 });
 </script>
+
+
+
+
 <script>
 // سلاسة الانتقال لزر Learn More
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -424,6 +430,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 </script>
+
+
+
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -462,6 +471,62 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+
+
+
+
+
+
+
+
+<script>
+const navbarToggle = document.querySelector('.navbar-toggle');
+const navbarCollapse = document.querySelector('.collapse.navbar-collapse');
+
+navbarToggle.addEventListener('click', () => {
+    // toggle القائمة المنسدلة
+    navbarCollapse.classList.toggle('in');
+});
+
+</script>
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const menu = document.getElementById("bs-example-navbar-collapse-1");
+  const toggle = document.querySelector(".navbar-toggle");
+
+  /* اغلاق عند الضغط على رابط */
+  menu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", function(){
+          if (menu.classList.contains("in")) {
+              toggle.click();   // نفس زر الاغلاق الرسمي
+          }
+      });
+  });
+
+  /* اغلاق عند الضغط خارج القائمة */
+  document.addEventListener("click", function(e){
+
+      const isClickInside =
+        menu.contains(e.target) ||
+        toggle.contains(e.target);
+
+      if (!isClickInside && menu.classList.contains("in")) {
+          toggle.click();  // اغلاق رسمي من Bootstrap
+      }
+
+  });
+
+});
+</script>
+
+
 
 </body>
 </html>
