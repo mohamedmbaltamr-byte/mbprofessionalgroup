@@ -377,6 +377,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <script src="jquery.isotope.js"></script>
 <script src="main.js"></script>
 
+
 <!-- ===== Section Navigation JS (إضافة فقط) ===== -->
 <script>
 const pages = document.querySelectorAll('.page');
@@ -528,6 +529,70 @@ document.addEventListener("DOMContentLoaded", function(){
 
 });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Section Navigation & Smooth Scroll -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+
+  // Portfolio filtering with Isotope
+  if(typeof $.fn.isotope === 'function'){
+
+    $('.portfolio-items').isotope({ itemSelector: '.portfolio-item', layoutMode: 'fitRows' });
+
+    
+    $('.cat a').click(function(){
+      $('.cat a').removeClass('active');
+      $(this).addClass('active');
+      var selector = $(this).attr('data-filter');
+      $('.portfolio-items').isotope({ filter: selector });
+      return false;
+    });
+  }
+
+  // Lightbox init
+  if(typeof $.fn.nivoLightbox === 'function'){
+    $('a[data-lightbox-gallery]').nivoLightbox();
+  }
+
+
+
+});
+</script>
+
+
+
+
+
+
+
+
 
 
 
