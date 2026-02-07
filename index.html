@@ -556,36 +556,54 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-<!-- Section Navigation & Smooth Scroll -->
+
+
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+$(window).on('load', function () {
 
+  var $grid = $('.portfolio-items');
 
-  // Portfolio filtering with Isotope
-  if(typeof $.fn.isotope === 'function'){
+  /* تشغيل Isotope */
+  $grid.imagesLoaded(function () {
 
-    $('.portfolio-items').isotope({ itemSelector: '.portfolio-item', layoutMode: 'fitRows' });
-
-    
-    $('.cat a').click(function(){
-      $('.cat a').removeClass('active');
-      $(this).addClass('active');
-      var selector = $(this).attr('data-filter');
-      $('.portfolio-items').isotope({ filter: selector });
-      return false;
+    $grid.isotope({
+      itemSelector: '.col-sm-6',
+      percentPosition: true,
+      layoutMode: 'fitRows'
     });
-  }
 
-  // Lightbox init
-  if(typeof $.fn.nivoLightbox === 'function'){
-    $('a[data-lightbox-gallery]').nivoLightbox();
-  }
+  });
 
+  /* الفلترة */
+  $('.cat a').on('click', function (e) {
+    e.preventDefault();
 
+    $('.cat a').removeClass('active');
+    $(this).addClass('active');
+
+    var filterValue = $(this).attr('data-filter');
+
+    $grid.isotope({
+      filter: filterValue
+    });
+
+    /* إعادة ربط اللايتبوكس للعناصر الجديدة */
+    setTimeout(function(){
+      $('a[data-lightbox-gallery]').nivoLightbox();
+    }, 50);
+
+  });
+
+  /* تشغيل اللايتبوكس مرة أولى */
+  $('a[data-lightbox-gallery]').nivoLightbox({
+    effect: 'fadeScale',
+    keyboardNav: true,
+    clickOverlayToClose: true
+  });
 
 });
 </script>
-
 
 
 
